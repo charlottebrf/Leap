@@ -1,5 +1,5 @@
 var Year = function (input) {
-    Year.prototype.isLeap = function (input) {
+    Year.prototype.isLeap = function () {
         let trueOrFalse = null;
         if (this.isDivisblebyInteger(input, 4) === true && this.isDivisblebyInteger(input, 100) === false ) {
             trueOrFalse = true;
@@ -17,4 +17,5 @@ var Year = function (input) {
 };
 
 module.exports = Year;
+
 
