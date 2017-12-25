@@ -1,19 +1,9 @@
 var Year = function (input) {
-    Year.prototype.isLeap = function () {
-        let trueOrFalse = null;
-        if (this.isDivisblebyInteger(input, 4) === true && this.isDivisblebyInteger(input, 100) === false ) {
-            trueOrFalse = true;
-        } else if (this.isDivisblebyInteger(input, 4) === true && this.isDivisblebyInteger(input, 100) === true && this.isDivisblebyInteger(input, 400) === true ){
-            trueOrFalse = true;
-        } else {
-            trueOrFalse = false;
-        }
-        return trueOrFalse;
-    };
+    this.maybeLeapYear = input;
+};
 
-    Year.prototype.isDivisblebyInteger = function (input, integer) {
-        return input % integer === 0 ? true : false;
-    };
+Year.prototype.isLeap = function () {
+    return (this.maybeLeapYear % 4 === 0 && this.maybeLeapYear % 100 !== 0) || this.maybeLeapYear % 400 === 0 ? true : false;
 };
 
 module.exports = Year;
